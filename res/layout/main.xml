@@ -3,36 +3,152 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="#CF1010"
     >
     <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/color_coding"
             android:layout_marginBottom="8dp"
-        />
+            style="@style/welcome_text"/>
 
-    <EditText
-            android:id="@+id/first_color"
+    <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"/>
+            android:text="@string/color_coding_hint"
+            style="@style/hint_text"/>
 
-    <EditText
-            android:id="@+id/second_color"
+    <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"/>
+            android:orientation="horizontal">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:orientation="vertical"
+                android:layout_weight="1">
+            <CheckBox
+                    android:id="@+id/red"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/red"
+                    android:onClick="onCheckboxClicked"/>
 
-    <EditText
-            android:id="@+id/third_color"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"/>
+            <CheckBox
+                    android:id="@+id/orange"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/orange"
+                    android:onClick="onCheckboxClicked"/>
+
+            <CheckBox
+                    android:id="@+id/yellow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/yellow"
+                    android:onClick="onCheckboxClicked"/>
+
+            <CheckBox
+                    android:id="@+id/green"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/green"
+                    android:onClick="onCheckboxClicked"/>
+
+            <CheckBox
+                    android:id="@+id/blue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/blue"
+                    android:onClick="onCheckboxClicked"/>
+
+            <CheckBox
+                    android:id="@+id/violet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/violet"
+                    android:onClick="onCheckboxClicked"/>
+
+            <CheckBox
+                    android:id="@+id/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/black"
+                    android:onClick="onCheckboxClicked"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+            <CheckBox
+                    android:id="@+id/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/white"
+                    android:onClick="onCheckboxClicked"/>
+
+            <CheckBox
+                    android:id="@+id/brown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/brown"
+                    android:onClick="onCheckboxClicked"/>
+
+            <CheckBox
+                    android:id="@+id/pink"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pink"
+                    android:onClick="onCheckboxClicked"/>
+
+            <CheckBox
+                    android:id="@+id/silver"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/silver"
+                    android:onClick="onCheckboxClicked"/>
+
+            <CheckBox
+                    android:id="@+id/gold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gold"
+                    android:onClick="onCheckboxClicked"/>
+
+            <CheckBox
+                    android:id="@+id/gray"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gray"
+                    android:onClick="onCheckboxClicked"/>
+        </LinearLayout>
+    </LinearLayout>
 
     <Button
             android:id="@+id/submit_colors"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/submit_colors"
+            android:layout_gravity="bottom"/>
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#BDECFF"
+            android:gravity="center"
+            android:text="@string/color_of_the_day"
+            style="@style/color_of_the_day"/>
+    <TextView
+            android:id="@+id/chosen_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|bottom"
+            style="@style/chosen_color"/>
 
 </LinearLayout>
 

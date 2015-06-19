@@ -11,7 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
-import android.widget.EditText;
+import android.widget.TextView;
 import com.emirrah.app.R.id;
 import com.emirrah.app.R.layout;
 import org.androidannotations.api.builder.ActivityIntentBuilder;
@@ -67,9 +67,7 @@ public final class MainActivity_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        first_color = ((EditText) hasViews.findViewById(id.first_color));
-        second_color = ((EditText) hasViews.findViewById(id.second_color));
-        third_color = ((EditText) hasViews.findViewById(id.third_color));
+        chosen_color_view = ((TextView) hasViews.findViewById(id.chosen_color));
         {
             View view = hasViews.findViewById(id.submit_colors);
             if (view!= null) {

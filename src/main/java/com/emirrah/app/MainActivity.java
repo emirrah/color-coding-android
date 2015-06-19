@@ -1,33 +1,100 @@
 package com.emirrah.app;
 
 import android.app.Activity;
-import android.widget.EditText;
+import android.view.View;
+import android.widget.CheckBox;
+import android.widget.TextView;
 import android.widget.Toast;
 import org.androidannotations.annotations.*;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 @EActivity(R.layout.main)
 public class MainActivity extends Activity {
 
-    @ViewById
-    EditText first_color;
+    @ViewById(R.id.chosen_color)
+    TextView chosen_color_view;
 
-    @ViewById
-    EditText second_color;
-
-    @ViewById
-    EditText third_color;
+    List<String> colors = new ArrayList<String>();
 
     @Click(R.id.submit_colors)
     public void submitColors() {
-        String first = first_color.getText().toString();
-        String second = second_color.getText().toString();
-        String third = third_color.getText().toString();
-
-        String[] colors = { first, second, third };
-
-        for (int i = 0; i < colors.length; i += 1) {
-            Toast toast = Toast.makeText(this, colors[i], Toast.LENGTH_LONG);
+        if(colors.size() > 0) {
+            String color = randomize();
+            chosen_color_view.setText(color);
+        }
+        else {
+            chosen_color_view.setText("");
+            Toast toast = Toast.makeText(this, "Choose color(s)", Toast.LENGTH_SHORT);
+            toast.setDuration(750);
             toast.show();
+        }
+    }
+
+    private String randomize() {
+        Random range = new Random();
+        int index = range.nextInt(colors.size());
+        return colors.get(index);
+    }
+
+    public void onCheckboxClicked(View view) {
+        boolean checked = ((CheckBox) view).isChecked();
+
+        switch(view.getId()) {
+            case R.id.red:
+                if (checked) { colors.add("Red"); }
+                else { colors.remove("Red"); }
+                break;
+            case R.id.orange:
+                if (checked) { colors.add("Orange"); }
+                else { colors.remove("Orange"); }
+                break;
+            case R.id.yellow:
+                if (checked) { colors.add("Yellow"); }
+                else { colors.remove("Yellow"); }
+                break;
+            case R.id.green:
+                if (checked) { colors.add("Green"); }
+                else { colors.remove("Green"); }
+                break;
+            case R.id.blue:
+                if (checked) { colors.add("Blue"); }
+                else { colors.remove("Blue"); }
+                break;
+            case R.id.violet:
+                if (checked) { colors.add("Violet"); }
+                else { colors.remove("Violet"); }
+                break;
+            case R.id.black:
+                if (checked) { colors.add("Black"); }
+                else { colors.remove("Black"); }
+                break;
+            case R.id.white:
+                if (checked) { colors.add("White"); }
+                else { colors.remove("White"); }
+                break;
+            case R.id.brown:
+                if (checked) { colors.add("Brown"); }
+                else { colors.remove("Brown"); }
+                break;
+            case R.id.pink:
+                if (checked) { colors.add("Pink"); }
+                else { colors.remove("Pink"); }
+                break;
+            case R.id.silver:
+                if (checked) { colors.add("Silver"); }
+                else { colors.remove("Silver"); }
+                break;
+            case R.id.gold:
+                if (checked) { colors.add("Gold"); }
+                else { colors.remove("Gold"); }
+                break;
+            case R.id.gray:
+                if (checked) { colors.add("Gray"); }
+                else { colors.remove("Gray"); }
+                break;
         }
     }
 }
