@@ -28,7 +28,7 @@ public class MainActivity extends Activity {
         else {
             chosen_color_view.setText("");
             Toast toast = Toast.makeText(this, "Choose color(s)", Toast.LENGTH_SHORT);
-            toast.setDuration(750);
+            toast.setDuration(500);
             toast.show();
         }
     }
